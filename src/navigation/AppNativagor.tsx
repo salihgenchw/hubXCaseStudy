@@ -5,6 +5,8 @@ import HomeScreen from "../screens/HomeScreen/HomeScreen";
 import DummyScreen from "../screens/DummyScreen";
 import { Ionicons } from "@expo/vector-icons";
 import COLORS from "../constants/color";
+import { View } from "react-native";
+import FabButton from "../components/FabButton";
 
 const Tab = createBottomTabNavigator();
 
@@ -34,6 +36,14 @@ const AppNavigator: React.FC = () => {
       >
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Diagnose" component={DummyScreen} />
+        <Tab.Screen
+          name="QR Scanner"
+          component={() => <View />}
+          options={{
+            tabBarButton: (props) => <FabButton {...props} />,
+            tabBarLabel: "",
+          }}
+        />
         <Tab.Screen name="My Garden" component={DummyScreen} />
         <Tab.Screen name="Profile" component={DummyScreen} />
       </Tab.Navigator>
