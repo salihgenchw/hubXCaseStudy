@@ -1,11 +1,14 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import Header from "./components/Header";
+import PremiumBox from "./components/PremiumBox";
+import COLORS from "../../constants/color";
 
 const HomeScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <Header />
+      <PremiumBox />
     </View>
   );
 };
@@ -13,9 +16,8 @@ const HomeScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#fff",
+    backgroundColor: COLORS.backgroundColor,
   },
   text: {
     fontSize: 32,
