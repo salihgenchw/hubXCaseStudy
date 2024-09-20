@@ -1,10 +1,11 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import Header from "./components/Header";
 
 const HomeScreen: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hi! HubX</Text>
+      <Header />
     </View>
   );
 };
@@ -12,7 +13,7 @@ const HomeScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
+    // justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#fff",
   },

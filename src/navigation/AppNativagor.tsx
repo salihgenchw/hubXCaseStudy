@@ -7,10 +7,25 @@ import { Ionicons } from "@expo/vector-icons";
 import COLORS from "../constants/color";
 import { View } from "react-native";
 import FabButton from "../components/FabButton";
+import {
+  useFonts,
+  Rubik_400Regular,
+  Rubik_500Medium,
+  Rubik_700Bold,
+} from "@expo-google-fonts/rubik";
 
 const Tab = createBottomTabNavigator();
 
 const AppNavigator: React.FC = () => {
+  let [fontsLoaded] = useFonts({
+    Rubik_400Regular,
+    Rubik_500Medium,
+    Rubik_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <NavigationContainer>
       <Tab.Navigator
