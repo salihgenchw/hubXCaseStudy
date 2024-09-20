@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, StyleSheet, ImageBackground } from "react-native";
 import sizes from "../../../constants/sizes";
+import SearchBar from "../../../components/SearchBar";
 
 const Header: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const Header: React.FC = () => {
     >
       <Text style={styles.text}>Hi, plant lover!</Text>
       <Text style={styles.textBold}>Good Afternoon! ⛅</Text>
+      <SearchBar />
     </ImageBackground>
   );
 };
@@ -18,7 +20,7 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: sizes.statusBarHeight || 24,
     width: sizes.screenWidth,
-    height: sizes.screenHeight * 0.25,
+    height: sizes.screenHeight * 0.24,
     paddingHorizontal: sizes.screenWidth * 0.05,
   },
   text: {
