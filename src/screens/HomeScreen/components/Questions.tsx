@@ -44,8 +44,8 @@ const Questions: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: sizes.screenWidth * 0.04,
     paddingTop: sizes.screenHeight * 0.02,
+    paddingLeft: sizes.screenWidth * 0.04,
   },
   text: {
     fontSize: sizes.screenWidth * 0.045,

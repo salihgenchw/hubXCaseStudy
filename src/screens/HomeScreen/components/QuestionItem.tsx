@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
     marginRight: sizes.screenWidth * 0.04,
   },
   image: {
-    width: sizes.screenWidth * 0.5,
-    height: sizes.screenWidth * 0.4,
+    width: sizes.screenWidth * 0.55,
+    height: sizes.screenWidth * 0.45,
     objectFit: "cover",
     borderRadius: sizes.screenWidth * 0.05,
   },
