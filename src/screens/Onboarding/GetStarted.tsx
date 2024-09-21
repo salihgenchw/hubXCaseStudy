@@ -1,19 +1,15 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  ImageBackground,
-  Image,
-  Alert,
-} from "react-native";
+import { View, Text, StyleSheet, ImageBackground, Image } from "react-native";
 import sizes from "../../constants/sizes";
 import COLORS from "../../constants/color";
 import CustomButton from "../../components/CustomButton";
+import { useNavigation } from "@react-navigation/native";
 
 const GetStarted: React.FC = () => {
+  const navigation = useNavigation();
+
   const handleGetStartedPress = () => {
-    Alert.alert("Get Started", "Navigating to the next screen...");
+    navigation.navigate("Onboarding1");
   };
 
   return (
