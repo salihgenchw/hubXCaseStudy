@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: "#3C3C4340",
     opacity: 0.9,
+    alignSelf: "center",
   },
   icon: {
     width: sizes.screenWidth * 0.12,
