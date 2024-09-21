@@ -1,42 +1,47 @@
 import React, { useEffect, useState } from "react";
 import { View, StyleSheet, Text, ActivityIndicator, Alert } from "react-native";
-import sizes from "../../../constants/sizes";
-import ApiService from "../../../api/ApiService";
-import QuestionItem from "./QuestionItem";
+import sizes from "../../../../constants/sizes";
+import ApiService from "../../../../api/ApiService";
+import CategoryItem from "./CategoryItem";
 
-interface Question {
+interface Category {
   id: number;
+  name: string;
   title: string;
-  image_uri: string;
+  image: {
+    url: string;
+  };
+  rank: number;
 }
 
-const Questions: React.FC = () => {
-  const [questions, setQuestions] = useState<Question[]>([]);
+const Categories: React.FC = () => {
+  const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    getQuestions();
+    getCategories();
   }, []);
 
-  const getQuestions = async () => {
+  const getCategories = async () => {
     setLoading(true);
     try {
-      const response: Question[] = await ApiService.get("GET_QUESTIONS");
-      setQuestions(response);
+      const response: { data: Category[] } = await ApiService.get(
+        "GET_CATEGORIES"
+      );
+      setCategories(response.data);
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      Alert.alert("Error", "There was a problem fetching the questions.");
+      Alert.alert("Error", "There was a problem fetching the categories.");
     }
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Get Started</Text>
       {loading ? (
         <ActivityIndicator size="large" color="#0000ff" />
       ) : (
-        <QuestionItem questions={questions} />
+        <CategoryItem categories={categories} />
       )}
     </View>
   );
@@ -60,4 +65,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Questions;
+export default Categories;
