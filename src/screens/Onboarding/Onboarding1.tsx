@@ -1,20 +1,15 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  ImageBackground,
-  Image,
-  Alert,
-} from "react-native";
+import { View, Text, StyleSheet, ImageBackground, Image } from "react-native";
 import sizes from "../../constants/sizes";
 import COLORS from "../../constants/color";
 import CustomButton from "../../components/CustomButton";
 import DotPageIndicator from "../../components/DotPageIndicator";
+import { useNavigation } from "@react-navigation/native";
 
 const Onboarding1: React.FC = () => {
+  const navigation = useNavigation();
   const handleGetStartedPress = () => {
-    Alert.alert("Get Started", "Navigating to the next screen...");
+    navigation.navigate("Onboarding2");
   };
 
   return (
