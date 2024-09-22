@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, StyleSheet, Text, ActivityIndicator, Alert } from "react-native";
+import { View, StyleSheet, ActivityIndicator, Alert } from "react-native";
 import sizes from "../../../../constants/sizes";
 import ApiService from "../../../../api/ApiService";
 import CategoryItem from "./CategoryItem";
@@ -29,7 +29,7 @@ const Categories: React.FC = () => {
       const response: { data: Category[] } = await ApiService.get(
         "GET_CATEGORIES"
       );
-      setCategories(response.data);
+      setCategories(response?.data);
       setLoading(false);
     } catch (error) {
       setLoading(false);
