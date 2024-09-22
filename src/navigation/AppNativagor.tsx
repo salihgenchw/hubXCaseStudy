@@ -16,7 +16,7 @@ const Tab = createBottomTabNavigator();
 
 const AppNavigator: React.FC = () => {
   const hasSeenOnboarding = useSelector(
-    (state: RootState) => state.onboarding.hasSeenOnboarding
+    (state: RootState) => state.onboarding.isOnboarded
   );
   const dispatch = useDispatch();
 
