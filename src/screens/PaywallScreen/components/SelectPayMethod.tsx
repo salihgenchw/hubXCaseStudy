@@ -23,7 +23,7 @@ const SelectPayMethod: React.FC = () => {
         ]}
         onPress={() => setSelected(index)}
       >
-        {hasDiscount && selected !== index && (
+        {hasDiscount && (
           <View style={styles.discountBadge}>
             <Text style={styles.discountText}>Save 50%</Text>
           </View>
