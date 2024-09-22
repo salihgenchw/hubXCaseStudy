@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import Header from "./components/Header";
 import PremiumBox from "./components/PremiumBox";
 import COLORS from "../../constants/color";
@@ -10,9 +10,11 @@ const HomeScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <Header />
-      <PremiumBox />
-      <Questions />
-      <Categories />
+      <ScrollView>
+        <PremiumBox />
+        <Questions />
+        <Categories />
+      </ScrollView>
     </View>
   );
 };

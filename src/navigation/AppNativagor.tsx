@@ -7,44 +7,30 @@ import { Ionicons } from "@expo/vector-icons";
 import COLORS from "../constants/color";
 import { View } from "react-native";
 import FabButton from "../components/FabButton";
-import {
-  useFonts,
-  Rubik_400Regular,
-  Rubik_500Medium,
-  Rubik_700Bold,
-} from "@expo-google-fonts/rubik";
-import {
-  Roboto_100Thin,
-  Roboto_300Light,
-  Roboto_400Regular,
-  Roboto_500Medium,
-  Roboto_700Bold,
-  Roboto_900Black,
-} from "@expo-google-fonts/roboto";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../redux/store";
 import Onboarding from "./Onboarding";
+import { completeOnboarding } from "../redux/onboardingSlice";
 
 const Tab = createBottomTabNavigator();
 
 const AppNavigator: React.FC = () => {
-  let [fontsLoaded] = useFonts({
-    Rubik_400Regular,
-    Rubik_500Medium,
-    Rubik_700Bold,
-    Roboto_100Thin,
-    Roboto_300Light,
-    Roboto_400Regular,
-    Roboto_500Medium,
-    Roboto_700Bold,
-    Roboto_900Black,
-  });
+  const hasSeenOnboarding = useSelector(
+    (state: RootState) => state.onboarding.hasSeenOnboarding
+  );
+  const dispatch = useDispatch();
 
-  if (!fontsLoaded) {
-    return null;
+  const handleOnboardingComplete = () => {
+    dispatch(completeOnboarding());
+  };
+
+  if (!hasSeenOnboarding) {
+    return <Onboarding onComplete={handleOnboardingComplete} />;
   }
+
   return (
     <NavigationContainer>
-      <Onboarding />
-      {/* <Tab.Navigator
+      <Tab.Navigator
         screenOptions={({ route }) => ({
           headerShown: false,
           tabBarIcon: ({ color, size }) => {
@@ -71,13 +57,13 @@ const AppNavigator: React.FC = () => {
           name="QR Scanner"
           component={() => <View />}
           options={{
-            tabBarButton: (props) => <FabButton {...props} />,
+            tabBarIcon: () => <FabButton />,
             tabBarLabel: "",
           }}
         />
         <Tab.Screen name="My Garden" component={DummyScreen} />
         <Tab.Screen name="Profile" component={DummyScreen} />
-      </Tab.Navigator> */}
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };

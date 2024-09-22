@@ -2,7 +2,6 @@ import React from "react";
 import { View, Text, StyleSheet, Image, FlatList } from "react-native";
 import sizes from "../../constants/sizes";
 import CustomButton from "../../components/CustomButton";
-import { useNavigation } from "@react-navigation/native";
 import ListItem from "./components/ListItem";
 import SelectPayMethod from "./components/SelectPayMethod";
 
@@ -24,10 +23,13 @@ const PaywallData = [
   },
 ];
 
-const PaywallScreen: React.FC = () => {
-  const navigation = useNavigation();
+interface PaywallScreenProps {
+  onComplete: () => void;
+}
+
+const PaywallScreen: React.FC<PaywallScreenProps> = ({ onComplete }) => {
   const handleGetStartedPress = () => {
-    navigation.navigate("Onboarding2");
+    onComplete();
   };
 
   return (
