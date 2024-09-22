@@ -30,7 +30,11 @@ Expo Go uygulaması içindeki Scan Qr bölümünden terminaldeki qr kodu okutup 
 
 ## Not
 
+\*\* OnBoarding'i anaysayfanın diğer sayfalarında yeniden başlatabilirsiniz.
+
 Çok daha iyi olabilirdi.. Günlük işlerimin yoğunluğu sebebiyle üzerine çok düşemedim. Yine de içime sindi. Görüşmek üzere.
+
+𝕏 𝕏 𝕏
 
 Herhangi bir sorunuz olursa lütfen benimle iletişime geçin;
 LinkedIn: [Salih Linkedin](https://www.linkedin.com/in/salihgenc/)
