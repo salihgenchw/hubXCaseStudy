@@ -1,4 +1,5 @@
 import React from "react";
+import { StatusBar } from "react-native";
 import { View, Text, StyleSheet, Image, FlatList } from "react-native";
 import sizes from "../../constants/sizes";
 import CustomButton from "../../components/CustomButton";
@@ -34,6 +35,7 @@ const PaywallScreen: React.FC<PaywallScreenProps> = ({ onComplete }) => {
 
   return (
     <View style={styles.container}>
+      <StatusBar barStyle="light-content" />
       <Image
         source={require("../../assets/PayWallImage.png")}
         style={styles.mainImage}
