@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, ActivityIndicator, Alert } from "react-native";
 import sizes from "../../../../constants/sizes";
 import ApiService from "../../../../api/ApiService";
 import CategoryItem from "./CategoryItem";
+import COLORS from "../../../../constants/color";
 
 interface Category {
   id: number;
@@ -39,7 +40,7 @@ const Categories: React.FC = () => {
   return (
     <View style={styles.container}>
       {loading ? (
-        <ActivityIndicator size="large" color="#0000ff" />
+        <ActivityIndicator size="large" color={COLORS.primary} />
       ) : (
         <CategoryItem categories={categories} />
       )}

@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, ActivityIndicator, Alert } from "react-native";
 import sizes from "../../../../constants/sizes";
 import ApiService from "../../../../api/ApiService";
 import QuestionItem from "./QuestionItem";
+import COLORS from "../../../../constants/color";
 
 interface Question {
   id: number;
@@ -34,7 +35,7 @@ const Questions: React.FC = () => {
     <View style={styles.container}>
       <Text style={styles.text}>Get Started</Text>
       {loading ? (
-        <ActivityIndicator size="large" color="#0000ff" />
+        <ActivityIndicator size="large" color={COLORS.primary} />
       ) : (
         <QuestionItem questions={questions} />
       )}
