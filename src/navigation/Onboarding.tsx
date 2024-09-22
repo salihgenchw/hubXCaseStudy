@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import GetStarted from "../screens/Onboarding/GetStarted";
 import Onboarding1 from "../screens/Onboarding/Onboarding1";
 import Onboarding2 from "../screens/Onboarding/Onboarding2";
+import PaywallScreen from "../screens/PaywallScreen/PaywallScreen";
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,11 @@ const Onboarding: React.FC = () => {
       <Stack.Screen
         name="Onboarding2"
         component={Onboarding2}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="PaywallScreen"
+        component={PaywallScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
